@@ -1,0 +1,116 @@
+﻿<HTML><BODY><META name=viewport content="width=device-width, initial-scale=1.0">
+<STYLE>
+        /* Ваши стили */
+        #additionalContent {
+            display: none; /* Начинаем с скрытия дополнительного контента */
+        }
+    </STYLE>
+
+<DIV class=container>
+<P>Объектно-ориентированное программирование (ООП) - это методология 
+программирования, основанная на использовании объектов, которые являются 
+экземплярами классов.</P>
+<P>В C# основные концепции ООП включают в себя классы, объекты, абстракцию, 
+инкапсуляцию, полиморфизм, наследование и другие.</P></SECTION><SECTION>
+<H2>Классы и объекты</H2>
+<P>Классы являются основными строительными блоками в объектно-ориентированном 
+программировании. Они описывают состояние и поведение объектов.</P>
+<H3>Пример для класса:</H3>
+<P>Вот пример класса в C#: </P><PRE><CODE>
+public class Car
+{
+    public string Make { get; set; }
+    public string Model { get; set; }
+    public int Year { get; set; }
+
+    public Car(string make, string model, int year)
+    {
+        Make = make;
+        Model = model;
+        Year = year;
+    }
+}
+            </CODE></PRE>// Конструктор public Car(string make, string model, 
+int year) { Make = make; Model = model; Year = year; } } </CODE><PRE></PRE>
+<P>Объекты создаются на основе классов с помощью оператора <CODE>new</CODE>:</P><PRE><CODE>
+Car myCar = new Car("Toyota", "Corolla", 2020);
+</CODE></PRE><PRE><CODE><H3>Пример для объекта:</H3></CODE></PRE><PRE><CODE>using System;</CODE></PRE><PRE><CODE>public class Person<BR>{<BR>&nbsp;&nbsp;&nbsp; public string Name;<BR>&nbsp;&nbsp;&nbsp; public int Age;</CODE></PRE><PRE><CODE>&nbsp;&nbsp;&nbsp; public Person(string name, int age)<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name = name;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Age = age;<BR>&nbsp;&nbsp;&nbsp; }</CODE></PRE><PRE><CODE>&nbsp;&nbsp;&nbsp; public void DisplayInfo()<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine($"Name: {Name}, Age: {Age}");<BR>&nbsp;&nbsp;&nbsp; }<BR>}</CODE></PRE><PRE><CODE>class Program<BR>{<BR>&nbsp;&nbsp;&nbsp; static void Main(string[] args)<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Person person1 = new Person("Alice", 30);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Person person2 = new Person("Bob", 25);</CODE></PRE><PRE><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; person1.DisplayInfo();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; person2.DisplayInfo();<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR></CODE></PRE><PRE><CODE><H3>Пример для абстракции:</H3><PRE><CODE>using System;</CODE></PRE><PRE><CODE>public interface IVehicle<BR>{<BR>&nbsp;&nbsp;&nbsp; void Drive();<BR>}</CODE></PRE><PRE><CODE>public class Car : IVehicle<BR>{<BR>&nbsp;&nbsp;&nbsp; public void Drive()<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("Car is being driven.");<BR>&nbsp;&nbsp;&nbsp; }<BR>}</CODE></PRE><PRE><CODE>class Program<BR>{<BR>&nbsp;&nbsp;&nbsp; static void Main(string[] args)<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Car car = new Car();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; car.Drive();<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR></CODE></PRE></CODE></PRE><PRE><CODE><H3>Пример для наследования:</H3><PRE><CODE>using System;</CODE></PRE><PRE><CODE>public class Animal<BR>{<BR>&nbsp;&nbsp;&nbsp; public virtual void MakeSound()<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("Animal makes a sound");<BR>&nbsp;&nbsp;&nbsp; }<BR>}</CODE></PRE><PRE><CODE>public class Dog : Animal<BR>{<BR>&nbsp;&nbsp;&nbsp; public override void MakeSound()<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("Dog barks");<BR>&nbsp;&nbsp;&nbsp; }<BR>}</CODE></PRE><PRE><CODE>class Program<BR>{<BR>&nbsp;&nbsp;&nbsp; static void Main(string[] args)<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Animal animal = new Animal();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dog dog = new Dog();</CODE></PRE><PRE><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; animal.MakeSound();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dog.MakeSound();<BR>&nbsp;&nbsp;&nbsp; }<BR>}</CODE></PRE><CODE></CODE></CODE></PRE><PRE><CODE><CODE><CODE><H3>Пример для полиморфизма:</H3><PRE><CODE>public class Animal<BR>{<BR>&nbsp;&nbsp;&nbsp; public virtual void MakeSound()<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("Животное издает звук");<BR>&nbsp;&nbsp;&nbsp; }<BR>}</CODE></PRE><PRE><CODE>public class Dog : Animal<BR>{<BR>&nbsp;&nbsp;&nbsp; public override void MakeSound()<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("Собака лает");<BR>&nbsp;&nbsp;&nbsp; }<BR>}</CODE></PRE><PRE><CODE>public class Cat : Animal<BR>{<BR>&nbsp;&nbsp;&nbsp; public override void MakeSound()<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("Кошка мяучит");<BR>&nbsp;&nbsp;&nbsp; }<BR>}</CODE></PRE><PRE><CODE>class Program<BR>{<BR>&nbsp;&nbsp;&nbsp; static void Main(string[] args)<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Animal[] animals = new Animal[] { new Dog(), new Cat() };</CODE></PRE><PRE><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (var animal in animals)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; animal.MakeSound();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR></CODE></PRE><PRE><CODE></CODE></PRE></CODE><PRE><BR></PRE></CODE><PRE></CODE><CODE><H3>Пример для инкапсуляции:</H3><PRE><CODE>public class Car<BR>{<BR>&nbsp;&nbsp;&nbsp; private string make;<BR>&nbsp;&nbsp;&nbsp; private string model;<BR>&nbsp;&nbsp;&nbsp; private int year;</CODE></PRE><PRE><CODE>&nbsp;&nbsp;&nbsp; public string Make<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get { return make; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set { make = value; }<BR>&nbsp;&nbsp;&nbsp; }</CODE></PRE><PRE><CODE>&nbsp;&nbsp;&nbsp; public string Model<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get { return model; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set { model = value; }<BR>&nbsp;&nbsp;&nbsp; }</CODE></PRE><PRE><CODE>&nbsp;&nbsp;&nbsp; public int Year<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get { return year; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set { year = value; }<BR>&nbsp;&nbsp;&nbsp; }<BR>}</CODE></PRE><PRE><CODE>class Program<BR>{<BR>&nbsp;&nbsp;&nbsp; static void Main(string[] args)<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Car myCar = new Car();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myCar.Make = "Toyota";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myCar.Model = "Corolla";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; myCar.Year = 2020;</CODE></PRE><PRE><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine($"Марка: {myCar.Make}, Модель: {myCar.Model}, Год: {myCar.Year}");<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR></CODE></PRE><PRE><CODE><BR></CODE>  </CODE></PRE></PRE></PRE>
+<H3>Задание 1:</H3>
+<P>Создайте класс <CODE>Person</CODE>, который имеет свойства <CODE>Name</CODE> 
+и <CODE>Age</CODE>. Создайте объект этого класса и задайте ему значения 
+свойств.</P></SECTION><!-- Другие разделы остаются без изменений --><SECTION>
+<H2>Абстракция</H2>
+<P>Абстракция - это процесс сокрытия деталей реализации и показа только 
+необходимых деталей.</P>
+<P>В C# абстракцию можно достичь с помощью классов и интерфейсов.</P>
+<H3>Задание 2:</H3>
+<P>Создайте интерфейс <CODE>IVehicle</CODE>, который определяет метод 
+<CODE>Drive</CODE>. Затем создайте класс <CODE>Car</CODE>, который реализует 
+этот интерфейс.</P></SECTION><SECTION>
+<H2>Инкапсуляция</H2>
+<P>Инкапсуляция - это механизм, который ограничивает доступ к данным внутри 
+объекта и скрывает их от внешнего мира.</P>
+<P>В C# инкапсуляцию можно достичь с помощью модификаторов доступа, таких как 
+<CODE>private</CODE>, <CODE>protected</CODE>, <CODE>public</CODE>.</P>
+<H3>Задание 3:</H3>
+<P>Создайте класс <CODE>BankAccount</CODE>, который имеет приватное поле 
+<CODE>balance</CODE> и методы <CODE>Deposit</CODE> и <CODE>Withdraw</CODE>, 
+которые изменяют этот баланс.</P></SECTION><SECTION>
+<H2>Полиморфизм</H2>
+<P>Полиморфизм - это возможность объекта обрабатывать данные различными 
+способами в зависимости от их типа или класса.</P>
+<P>В C# полиморфизм реализуется через перегрузку методов, виртуальные методы и 
+интерфейсы.</P>
+<H3>Задание 4:</H3>
+<P>Создайте базовый класс <CODE>Shape</CODE> и производные классы 
+<CODE>Circle</CODE> и <CODE>Rectangle</CODE>. У каждого класса должен быть метод 
+<CODE>CalculateArea</CODE>, который возвращает площадь 
+фигуры.</P></SECTION><SECTION>
+<H2>Наследование</H2>
+<P>Наследование - это механизм, позволяющий создавать новый класс на основе 
+существующего класса.</P>
+<P>В C# классы могут наследовать другие классы с помощью ключевого слова 
+<CODE>class</CODE>.</P>
+<H3>Задание 5:</H3>
+<P>Создайте класс <CODE>Animal</CODE>, а затем производные классы 
+<CODE>Dog</CODE> и <CODE>Cat</CODE>. Каждый класс должен иметь метод 
+<CODE>MakeSound</CODE>.</P></SECTION><SECTION>
+<H2>Оператор new</H2>
+<P>Оператор <CODE>new</CODE> используется для создания новых объектов на основе 
+классов.</P>
+<P>Пример:</P><PRE><CODE>
+Car myCar = new Car();
+            </CODE></PRE></SECTION><SECTION>
+<H2>Конструкторы</H2>
+<P>Конструкторы - это специальные методы, вызываемые при создании нового 
+объекта.</P>
+<P>В C# конструкторы имеют тот же название, что и класс, и не возвращают 
+значение.</P><PRE><CODE>
+public class Car
+{
+    public string Make;
+    public string Model;
+    public int Year;
+
+    // Конструктор
+    public Car(string make, string model, int year)
+    {
+        Make = make;
+        Model = model;
+        Year = year;
+    }
+}
+            </CODE></PRE></DIV>
+<H3>Задание 6:</H3>
+<OL>
+  <LI>Создайте класс "Person" с полями "Name", "Age" и "Email". Напишите 
+  конструктор для этого класса. 
+  <LI>Создайте объект класса "Car" с данными о марке, модели и годе выпуска. 
+  </LI></OL>
+<H3>Вопросы для самопроверки:</H3>
+<OL>
+  <LI>Что такое классы и объекты в объектно-ориентированном программировании? 
+  <LI>Как создать новый объект класса в C#? 
+  <LI>Что такое конструктор класса и как он используется? </LI></OL></SECTION><!-- Добавляем дополнительный раздел с id, который будет скрыт --><SECTION 
+id=additionalContent>
+</BODY></HTML>

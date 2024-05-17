@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Урок 9: Наследование и полиморфизм в C#</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD>
+<BODY>
+<DIV class=container>C # бағдарламалау курсының тоғызыншы сабағына қош келдіңіз! 
+Бұл сабақта біз C # бағдарламалау тіліндегі мұрагерлік пен полиморфизмді 
+зерттейміз.</DIV>
+<H2 class=container>Мұрагерлік</H2>
+<P class=container>Мұрагерлік бұрыннан бар негізінде жаңа класс жасауға 
+мүмкіндік береді. Басқа классты мұрагер ететін класс туынды класс деп аталады, 
+ал мұрагер класс базалық класс деп аталады.</P>
+<H2 class=container>Мысал</H2>
+<P class=container>C# тіліндегі мұраның мысалын қарастырайық:</P>
+<DIV class=container><PRE><CODE>
+using System;
+
+// Базовый класс
+class Animal
+{
+    public void Eat()
+    {
+        Console.WriteLine("Жануарлар тамақтанды.");
+    }
+}
+
+// Производный класс
+class Dog : Animal
+{
+    public void Bark()
+    {
+        Console.WriteLine("Ит үреді.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Dog myDog = new Dog();
+        myDog.Eat(); // Негізгі класс әдісі
+        myDog.Bark(); // Туынды кластан алынған әдіс
+    }
+}
+        </CODE></PRE></DIV>
+<H2 class=container>Тапсырма</H2>
+<P class=container>Drive әдісімен базалық класс Vehicle және Horn әдісімен 
+туынды класс автомобильін жүзеге асыратын C# бағдарламасын жазыңыз. Car класының 
+объектісін жасаңыз және оның әдістерін шақырыңыз.</P></BODY></HTML>

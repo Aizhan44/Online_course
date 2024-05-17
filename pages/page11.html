@@ -1,0 +1,174 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD>
+<BODY>
+<META name=viewport content="width=device-width, initial-scale=1.0">
+<STYLE>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        p {
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        footer a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </STYLE>
+
+<DIV class=container>
+<H2>Символы и строки</H2>
+<P>В C# символы представлены типом <CODE>char</CODE>, который представляет 
+отдельный символ Unicode. Строки представлены типом <CODE>string</CODE>, который 
+представляет последовательность символов Unicode.</P>
+<P>Символы могут быть определены с помощью одинарных кавычек, а строки - с 
+помощью двойных кавычек.</P>
+<P><STRONG>Пример:</STRONG></P><PRE><CODE>
+char symbol = 'A';
+string greeting = "Hello, world!";
+            </CODE></PRE></DIV>
+<DIV class=container>
+<H2>Основные методы класса System.Char</H2>
+<P>Класс <CODE>System.Char</CODE> предоставляет различные методы для работы с 
+символами в C#:</P>
+<UL>
+  <LI><CODE>IsDigit(char)</CODE> - проверяет, является ли символ цифрой. 
+  <LI><CODE>IsLetter(char)</CODE> - проверяет, является ли символ буквой. 
+  <LI><CODE>IsWhiteSpace(char)</CODE> - проверяет, является ли символ 
+  пробельным. 
+  <LI><CODE>IsLower(char)</CODE> - проверяет, является ли символ строчной 
+  буквой. 
+  <LI><CODE>IsUpper(char)</CODE> - проверяет, является ли символ заглавной 
+  буквой. 
+  <LI><CODE>ToUpper(char)</CODE> - преобразует символ в верхний регистр. 
+  <LI><CODE>ToLower(char)</CODE> - преобразует символ в нижний регистр. 
+</LI></UL></SECTION><SECTION>
+<H2>Операции над строками</H2>
+<P>В C# можно совершать различные операции над строками:</P>
+<UL>
+  <LI>Конкатенация строк (используя оператор <CODE>+</CODE>). 
+  <LI>Получение подстроки (метод <CODE>Substring</CODE>). 
+  <LI>Сравнение строк (методы <CODE>Compare</CODE> и операторы сравнения). 
+  <LI>Поиск подстроки (метод <CODE>IndexOf</CODE>). 
+  <LI>Замена подстроки (метод <CODE>Replace</CODE>). 
+  <LI>Разделение строки на подстроки (метод <CODE>Split</CODE>). 
+  <LI>Удаление пробелов (методы <CODE>Trim</CODE>, <CODE>TrimStart</CODE>, 
+  <CODE>TrimEnd</CODE>). </LI></UL></SECTION><SECTION>
+<H2>Методы класса String</H2>
+<P>Класс <CODE>System.String</CODE> предоставляет множество методов для работы 
+со строками в C#:</P>
+<UL>
+  <LI><CODE>Length</CODE> - возвращает длину строки. 
+  <LI><CODE>IndexOf</CODE> - возвращает индекс первого вхождения указанного 
+  символа или подстроки. 
+  <LI><CODE>LastIndexOf</CODE> - возвращает индекс последнего вхождения 
+  указанного символа или подстроки. 
+  <LI><CODE>Substring</CODE> - возвращает подстроку указанной строки. 
+  <LI><CODE>ToUpper</CODE> - возвращает строку, в которой все символы приведены 
+  к верхнему регистру. 
+  <LI><CODE>ToLower</CODE> - возвращает строку, в которой все символы приведены 
+  к нижнему регистру. 
+  <LI><CODE>Trim</CODE> - возвращает строку без начальных и конечных пробелов. 
+  <LI><CODE>Replace</CODE> - заменяет все вхождения указанной строки на другую 
+  строку. </LI></UL></SECTION><SECTION>
+<H2>Массивы строк</H2>
+<P>Массив строк (<CODE>string[]</CODE>) - это упорядоченная коллекция строк. В 
+C# массивы создаются с помощью ключевого слова <CODE>new</CODE>.</P>
+<P><STRONG>Пример:</STRONG></P><PRE><CODE>
+string[] colors = new string[] { "Red", "Green", "Blue" };
+            </CODE></PRE></SECTION><SECTION>
+<H2>Форматирование данных числовых типов</H2>
+<P>В C# для форматирования числовых данных используются методы класса 
+<CODE>ToString</CODE> и спецификаторы формата. Например:</P><PRE><CODE>
+int number = 123;
+string formattedNumber = number.ToString("D5"); // "00123"
+            </CODE></PRE>
+<P>В данном примере число <CODE>123</CODE> форматируется как пятизначное число с 
+ведущими нулями.</P></SECTION><SECTION>
+<H2>Примеры использования методов класса System.Char</H2>
+<H3>Пример 1: Проверка символа на цифру</H3>
+<P>Давайте проверим символ на то, является ли он цифрой, используя метод 
+<CODE>IsDigit</CODE>:</P><PRE><CODE>
+char symbol = '7';
+bool isDigit = Char.IsDigit(symbol); // true
+            </CODE></PRE>
+<H3>Пример 2: Преобразование символа в верхний регистр</H3>
+<P>Теперь давайте преобразуем символ в верхний регистр с помощью метода 
+<CODE>ToUpper</CODE>:</P><PRE><CODE>
+char lowercase = 'a';
+char uppercase = Char.ToUpper(lowercase); // 'A'
+            </CODE></PRE>
+<H3>Пример 3: Проверка символа на пробел</H3>
+<P>Наконец, давайте проверим символ на то, является ли он пробельным, используя 
+метод <CODE>IsWhiteSpace</CODE>:</P><PRE><CODE>
+char space = ' ';
+bool isWhitespace = Char.IsWhiteSpace(space); // true
+            </CODE></PRE></SECTION><SECTION>
+<H2>Примеры операций над строками</H2>
+<H3>Пример 1: Конкатенация строк</H3>
+<P>Склеим две строки вместе:</P><PRE><CODE>
+string firstName = "John";
+string lastName = "Doe";
+string fullName = firstName + " " + lastName; // "John Doe"
+            </CODE></PRE>
+<H3>Пример 2: Получение подстроки</H3>
+<P>Давайте получим подстроку из исходной строки:</P><PRE><CODE>
+string text = "Hello, world!";
+string substring = text.Substring(0, 5); // "Hello"
+            </CODE></PRE>
+<H3>Пример 3: Замена подстроки</H3>
+<P>Давайте заменим часть строки на другую строку:</P><PRE><CODE>
+string original = "C# is awesome!";
+string modified = original.Replace("awesome", "amazing"); // "C# is amazing!"
+            </CODE></PRE></SECTION>
+<H2>Задания</H2>
+<P>Выполните следующие задания:</P>
+<OL>
+  <LI>Создайте переменную типа <CODE>char</CODE> и присвойте ей значение 'A'. 
+  Выведите на экран результат работы метода <CODE>ToUpper</CODE> для этого 
+  символа. 
+  <LI>Создайте переменную типа <CODE>string</CODE> и присвойте ей значение 
+  "Hello, world!". Используя метод <CODE>Substring</CODE>, получите подстроку, 
+  содержащую слово "world". 
+  <LI>Создайте массив строк, содержащий названия месяцев года. Выведите на экран 
+  все элементы этого массива в обратном порядке. </LI></OL></SECTION><SECTION>
+<H2>Вопросы для самопроверки</H2>
+<OL>
+  <LI>Какие основные методы класса <CODE>System.Char</CODE>? 
+  <LI>Какие операции можно совершать над строками в C#? 
+  <LI>Какие методы предоставляет класс <CODE>System.String</CODE>? 
+  <LI>Как происходит форматирование данных числовых типов в C#? 
+</LI></OL></DIV></BODY></HTML>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Комментарии пользователей</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD>
+<BODY>
+<META name=viewport content="width=device-width, initial-scale=1.0">
+<STYLE>
+        /* Стили для страницы */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 10px;
+        }
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .comments {
+            margin-top: 20px;
+        }
+        .comment {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .comment p {
+            margin: 0;
+        }
+    </STYLE>
+
+<DIV class=container>
+<H1>Пікір жазу</H1>
+<FORM id=commentForm><LABEL for=name>Аты - жөніңіз:</LABEL> <INPUT id=name 
+name=name required> <LABEL for=comment>Пікір жазыңыз:</LABEL> <TEXTAREA id=comment name=comment required></TEXTAREA><BUTTON 
+type=submit>Жіберу</BUTTON> </FORM>
+<DIV class=comments><!-- Комментарии будут отображаться здесь --></DIV></DIV>
+<SCRIPT>
+        // Обработчик отправки формы комментария
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Предотвращаем стандартное поведение отправки формы
+
+            // Получаем данные из формы
+            var name = document.getElementById('name').value;
+            var comment = document.getElementById('comment').value;
+
+            // Создаем новый комментарий
+            var newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = '<p><strong>' + name + ':</strong> ' + comment + '</p>';
+
+            // Добавляем новый комментарий к списку комментариев
+            document.querySelector('.comments').appendChild(newComment);
+
+            // Очищаем форму
+            document.getElementById('name').value = '';
+            document.getElementById('comment').value = '';
+        });
+    </SCRIPT>
+</BODY></HTML>

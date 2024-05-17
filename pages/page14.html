@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Урок 14: Асинхронное программирование в C#</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD>
+<BODY>
+<DIV class=container>
+<P>C# бағдарламалау курсының он төртінші сабағына қош келдіңіздер! Бұл оқулықта 
+біз асинхронды бағдарламалауды және C# бағдарламалау тілінде асинхронды 
+әдістерді пайдалануды үйренеміз.</P>
+<H2>Асинхронды&nbsp; программалау</H2>
+<P>C# тілінде асинхронды бағдарламалау желіден деректерді жүктеу немесе файлдан 
+оқу сияқты енгізу/шығару операцияларын орындау кезінде жұмысын жалғастыратын 
+қолданбаларды жасауға мүмкіндік береді. Бұл қолданбаның жауап беру қабілеті мен 
+өнімділігін жақсартады.</P>
+<H2>Мысал</H2>
+<P>C# тілінде асинхронды бағдарламалауды қолданудың мысалын қарастырайық:</P><PRE><CODE>
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+class Program
+{
+    static async Task Main()
+    {
+        await DownloadDataAsync();
+    }
+
+    static async Task DownloadDataAsync()
+    {
+        using (HttpClient client = new HttpClient())
+        {
+            string url = "https://api.example.com/data";
+            string data = await client.GetStringAsync(url);
+            Console.WriteLine("Деректер алынды:");
+            Console.WriteLine(data);
+        }
+    }
+}
+        </CODE></PRE>
+<H2>Тапсырма</H2>
+<P>Файлдан деректерді асинхронды түрде оқитын және оның мазмұнын экранда 
+көрсететін C# бағдарламасын жазыңыз.</P></DIV></BODY></HTML>
