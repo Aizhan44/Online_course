@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Операторы присваивания, ветвления, оператор goto - Oнлайн курс C#</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+<meta name="generator" content="TurboSite 1.7.1" />
+
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="index.html">Oнлайн курс C#</a></h1>
+			<p></p>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li><a style="" href="index.html">Главная</a></li>
+<li><a style="" href="page13.html">Практические задания</a></li>
+<li><a style="" href="page17.html">Самостоятельная работа</a></li>
+<li><a style="" href="page19.html">Контрольные вопросы</a></li>
+<li><a style="" href="page27.html">Глосарий</a></li>
+<li><a style="" href="page29.html">Тест</a></li>
+
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+			<div class="post">
+			<div class="post-bgtop">
+			<div class="post-bgbtm">
+				<h1 class="title">Операторы присваивания, ветвления, оператор goto</h1>
+				<div class="entry">
+					
+<META name=viewport content="width=device-width, initial-scale=1.0">
+<STYLE>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        p {
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        footer a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </STYLE>
+
+<DIV class=container></HEADER><SECTION>
+<H2>Операторы присваивания</H2>
+<P>Операторы присваивания в языке C# используются для присваивания значения 
+переменной. Они позволяют изменять значения переменных во время выполнения 
+программы.</P>
+<P>Примеры операторов присваивания:</P><PRE><CODE>
+int a = 10;
+int b = a;
+            </CODE></PRE></SECTION><SECTION>
+<H2>Операторы ветвления (if-else, switch)</H2>
+<P>Операторы ветвления позволяют программе принимать решения и выполнять 
+различные действия в зависимости от условий.</P>
+<H3>Оператор if-else</H3>
+<P>Оператор <CODE>if-else</CODE> позволяет выполнить блок кода, если указанное 
+условие истинно, иначе выполнить другой блок кода.</P><PRE><CODE>
+int x = 10;
+if (x &gt; 0)
+{
+    Console.WriteLine("Число положительное");
+}
+else if (x &lt; 0)
+{
+    Console.WriteLine("Число отрицательное");
+}
+else
+{
+    Console.WriteLine("Число равно нулю");
+}
+            </CODE></PRE>
+<H3>Оператор switch</H3>
+<P>Оператор <CODE>switch</CODE> позволяет выбрать из множества возможных 
+вариантов и выполнить соответствующий блок кода.</P><PRE><CODE>
+int day = 3;
+switch (day)
+{
+    case 1:
+        Console.WriteLine("Понедельник");
+        break;
+    case 2:
+        Console.WriteLine("Вторник");
+        break;
+    default:
+        Console.WriteLine("День недели неизвестен");
+        break;
+}
+            </CODE></PRE></SECTION><SECTION>
+<H2>Оператор goto</H2>
+<P>Оператор <CODE>goto</CODE> в языке C# позволяет переходить к определенным 
+меткам в коде. Однако его использование не рекомендуется, так как это может 
+привести к усложнению кода и ухудшению его читаемости.</P>
+<P>Пример использования оператора <CODE>goto</CODE>:</P><PRE><CODE>
+int i = 0;
+start:
+i++;
+Console.WriteLine(i);
+if (i &lt; 10)
+    goto start;
+            </CODE></PRE></SECTION><SECTION>
+<H2>Задания</H2>
+<P>Выполните следующие задания:</P>
+<OL>
+  <LI>Объявите переменную типа <CODE>int</CODE> с именем <CODE>a</CODE> и 
+  присвойте ей значение 10. Объявите переменную типа <CODE>int</CODE> с именем 
+  <CODE>b</CODE> и присвойте ей значение 5. Выполните операцию сложения чисел 
+  <CODE>a</CODE> и <CODE>b</CODE>, и сохраните результат в переменную 
+  <CODE>sum</CODE>. 
+  <LI>Объявите переменную типа <CODE>double</CODE> с именем <CODE>number</CODE> 
+  и присвойте ей значение 16.0. Найдите квадратный корень числа 
+  <CODE>number</CODE> и сохраните результат в переменную 
+  <CODE>squareRoot</CODE>. </LI></OL></SECTION><SECTION>
+<H2>Вопросы для самопроверки</H2>
+<OL>
+  <LI>Какие типы операторов присваивания вы знаете в языке C#? 
+  <LI>Какие ключевые слова используются для создания условных выражений в языке 
+  C#? 
+  <LI>Почему использование оператора <CODE>goto</CODE> не рекомендуется в 
+  большинстве случаев? </LI></OL></DIV>
+
+				</div>
+			</div>
+			</div>
+			</div>
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+				<li>
+					<h2></h2>
+					<ul>
+						<li><a style="" href="index.html">Главная</a></li>
+<li><a style="" href="page1.html">Элементы языка, типы данных, переменные, константы</a></li>
+<li><a style="" href="page2.html">Операции и выражения в языке C#, математические функции</a></li>
+<li><a style="" href="page3.html">Ввод-вывод, линейное программирование</a></li>
+<li class="active"><a style="" href="page4.html">Операторы присваивания, ветвления, оператор goto</a></li>
+<li><a style="" href="page5.html">Операторы цикла: for, while, do-while</a></li>
+<li><a style="" href="page6.html">Одномерные массивы</a></li>
+<li><a style="" href="page7.html">Основные элементы класса Array</a></li>
+<li><a style="" href="page8.html">Двумерные массивы</a></li>
+<li><a style="" href="page10.html">Методы в C#</a></li>
+<li><a style="" href="page11.html">Символы и строки в С#</a></li>
+<li><a style="" href="page12.html">Объектно-ориентированное программирование </a></li>
+<li><a style="" href="page21.html">Microsoft Visual Studio</a></li>
+<li><a style="" href="page27.html">Глосарий</a></li>
+<li><a style="" href="page29.html">Тест</a></li>
+<li><a style="" href="page30.html">Тест</a></li>
+
+					</ul>
+				</li>
+			
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer">
+		<p> | Электронный учебник| </a></p>
+	</div>
+	<!-- end #footer -->
+</div>
+</body>
+</html>

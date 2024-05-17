@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Одномерные массивы - Oнлайн курс C#</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+<meta name="generator" content="TurboSite 1.7.1" />
+
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="index.html">Oнлайн курс C#</a></h1>
+			<p></p>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li><a style="" href="index.html">Главная</a></li>
+<li><a style="" href="page13.html">Практические задания</a></li>
+<li><a style="" href="page17.html">Самостоятельная работа</a></li>
+<li><a style="" href="page19.html">Контрольные вопросы</a></li>
+<li><a style="" href="page27.html">Глосарий</a></li>
+<li><a style="" href="page29.html">Тест</a></li>
+
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+			<div class="post">
+			<div class="post-bgtop">
+			<div class="post-bgbtm">
+				<h1 class="title">Одномерные массивы</h1>
+				<div class="entry">
+					
+<META name=viewport content="width=device-width, initial-scale=1.0">
+<STYLE>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        p {
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        footer a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </STYLE>
+
+<DIV class=container>
+<H2>Что такое одномерные массивы?</H2>
+<P>Одномерный массив представляет собой набор элементов одного типа, 
+расположенных последовательно в памяти.</P>
+<P>Пример объявления массива:</P><PRE><CODE>
+int[] numbers = new int[5];
+            </CODE></PRE></SECTION><SECTION>
+<H2>Доступ к элементам массива</H2>
+<P>Для доступа к элементам массива используется индексация. Индексы в C# 
+начинаются с 0.</P>
+<P>Пример доступа к элементам массива:</P><PRE><CODE>
+int[] numbers = { 1, 2, 3, 4, 5 };
+Console.WriteLine(numbers[0]); // Выводит первый элемент массива
+Console.WriteLine(numbers[4]); // Выводит последний элемент массива
+            </CODE></PRE></SECTION><SECTION>
+<H2>Инициализация массива</H2>
+<P>Массивы могут быть инициализированы при объявлении или позже с использованием 
+цикла или явной инициализации.</P>
+<P>Примеры инициализации массива:</P><PRE><CODE>
+int[] numbers = new int[] { 1, 2, 3, 4, 5 }; // Явная инициализация
+int[] numbers2 = { 1, 2, 3, 4, 5 }; // Сокращенная инициализация
+            </CODE></PRE></SECTION><SECTION>
+<H2>Примеры программ с массивами</H2>
+<P>Пример 1: Создание массива и вывод его элементов:</P><PRE><CODE>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Создаем массив целых чисел
+        int[] numbers = new int[5];
+
+        // Инициализируем массив значениями
+        numbers[0] = 10;
+        numbers[1] = 20;
+        numbers[2] = 30;
+        numbers[3] = 40;
+        numbers[4] = 50;
+
+        // Выводим элементы массива на экран
+        for (int i = 0; i &lt; numbers.Length; i++)
+        {
+            Console.WriteLine($"Элемент {i}: {numbers[i]}");
+        }
+    }
+}
+            </CODE></PRE>
+<P>Пример 2: Использование явной инициализации массива:</P><PRE><CODE>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Создаем и инициализируем массив
+        int[] numbers = { 10, 20, 30, 40, 50 };
+
+        // Выводим элементы массива на экран
+        for (int i = 0; i &lt; numbers.Length; i++)
+        {
+            Console.WriteLine($"Элемент {i}: {numbers[i]}");
+        }
+    }
+}
+            </CODE></PRE></SECTION><SECTION>
+<H2>Задания</H2>
+<P>Выполните следующие задания:</P>
+<OL>
+  <LI>Объявите массив строк с именем <CODE>fruits</CODE> и инициализируйте его 
+  значениями "Яблоко", "Апельсин", "Банан", "Груша". Выведите на экран второй 
+  элемент массива. 
+  <LI>Создайте массив целых чисел <CODE>numbers</CODE> и инициализируйте его 
+  значениями от 1 до 10. Выведите на экран сумму всех элементов массива. 
+</LI></OL></SECTION><SECTION>
+<H2>Вопросы для самопроверки</H2>
+<OL>
+  <LI>Что такое одномерный массив и как его объявить в языке C#? 
+  <LI>Как получить доступ к элементам массива? 
+  <LI>Как проинициализировать массив при его объявлении? 
+</LI></OL></DIV>
+
+				</div>
+			</div>
+			</div>
+			</div>
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+				<li>
+					<h2></h2>
+					<ul>
+						<li><a style="" href="index.html">Главная</a></li>
+<li><a style="" href="page1.html">Элементы языка, типы данных, переменные, константы</a></li>
+<li><a style="" href="page2.html">Операции и выражения в языке C#, математические функции</a></li>
+<li><a style="" href="page3.html">Ввод-вывод, линейное программирование</a></li>
+<li><a style="" href="page4.html">Операторы присваивания, ветвления, оператор goto</a></li>
+<li><a style="" href="page5.html">Операторы цикла: for, while, do-while</a></li>
+<li class="active"><a style="" href="page6.html">Одномерные массивы</a></li>
+<li><a style="" href="page7.html">Основные элементы класса Array</a></li>
+<li><a style="" href="page8.html">Двумерные массивы</a></li>
+<li><a style="" href="page10.html">Методы в C#</a></li>
+<li><a style="" href="page11.html">Символы и строки в С#</a></li>
+<li><a style="" href="page12.html">Объектно-ориентированное программирование </a></li>
+<li><a style="" href="page21.html">Microsoft Visual Studio</a></li>
+<li><a style="" href="page27.html">Глосарий</a></li>
+<li><a style="" href="page29.html">Тест</a></li>
+<li><a style="" href="page30.html">Тест</a></li>
+
+					</ul>
+				</li>
+			
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer">
+		<p> | Электронный учебник | </p>
+	</div>
+	<!-- end #footer -->
+</div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Основные элементы класса Array - Oнлайн курс C#</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+<meta name="generator" content="TurboSite 1.7.1" />
+
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="index.html">Oнлайн курс C#</a></h1>
+			<p></p>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li><a style="" href="index.html">Главная</a></li>
+<li><a style="" href="page13.html">Практические задания</a></li>
+<li><a style="" href="page17.html">Самостоятельная работа</a></li>
+<li><a style="" href="page19.html">Контрольные вопросы</a></li>
+<li><a style="" href="page27.html">Глосарий</a></li>
+<li><a style="" href="page29.html">Тест</a></li>
+
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+			<div class="post">
+			<div class="post-bgtop">
+			<div class="post-bgbtm">
+				<h1 class="title">Основные элементы класса Array</h1>
+				<div class="entry">
+					
+<META name=viewport content="width=device-width, initial-scale=1.0">
+<STYLE>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        p {
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        footer a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </STYLE>
+
+<DIV class=container></HEADER><SECTION>
+<H2>Ввод-вывод элементов одномерного массива</H2>
+<P>Для ввода-вывода элементов одномерного массива в C# используются циклы и 
+стандартные методы языка.</P>
+<P>Пример вывода элементов массива:</P><PRE><CODE>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Создаем и инициализируем массив
+        int[] numbers = { 1, 2, 3, 4, 5 };
+
+        // Выводим элементы массива на экран
+        foreach (int num in numbers)
+        {
+            Console.WriteLine(num);
+        }
+    }
+}
+            </CODE></PRE>
+<P>Пример ввода элементов массива:</P><PRE><CODE>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Создаем массив
+        int[] numbers = new int[5];
+
+        // Заполняем массив данными, введенными пользователем
+        for (int i = 0; i &lt; numbers.Length; i++)
+        {
+            Console.Write($"Введите число {i + 1}: ");
+            numbers[i] = int.Parse(Console.ReadLine());
+        }
+
+        // Выводим элементы массива на экран
+        foreach (int num in numbers)
+        {
+            Console.WriteLine(num);
+        }
+    }
+}
+            </CODE></PRE></HEADER><SECTION>
+<H2>Методы класса Array</H2>
+<P>Класс <CODE>Array</CODE> в C# предоставляет множество полезных методов для 
+работы с массивами.</P>
+<UL>
+  <LI><STRONG>Length:</STRONG> Возвращает длину массива. 
+  <LI><STRONG>Copy:</STRONG> Создает поверхностную копию массива. 
+  <LI><STRONG>CopyTo:</STRONG> Копирует элементы массива в другой массив. 
+  <LI><STRONG>IndexOf:</STRONG> Возвращает индекс первого вхождения указанного 
+  элемента в массиве. 
+  <LI><STRONG>LastIndexOf:</STRONG> Возвращает индекс последнего вхождения 
+  указанного элемента в массиве. 
+  <LI><STRONG>Reverse:</STRONG> Изменяет порядок элементов массива на обратный. 
+  </LI></UL>
+<P>Примеры использования методов:</P><PRE><CODE>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Примеры методов класса Array
+        int[] numbers = { 1, 2, 3, 4, 5 };
+        Console.WriteLine($"Длина массива: {numbers.Length}");
+
+        // Создание копии массива
+        int[] copy = (int[])numbers.Clone();
+        Console.WriteLine($"Копия массива: {string.Join(", ", copy)}");
+
+        // Копирование элементов массива в другой массив
+        int[] destination = new int[3];
+        numbers.CopyTo(destination, 0);
+        Console.WriteLine($"Копия элементов в новый массив: {string.Join(", ", destination)}");
+
+        // Индекс первого вхождения элемента
+        int index = Array.IndexOf(numbers, 3);
+        Console.WriteLine($"Индекс первого вхождения числа 3: {index}");
+
+        // Индекс последнего вхождения элемента
+        int lastIndex = Array.LastIndexOf(numbers, 3);
+        Console.WriteLine($"Индекс последнего вхождения числа 3: {lastIndex}");
+
+        // Изменение порядка элементов на обратный
+        Array.Reverse(numbers);
+        Console.WriteLine($"Обратный порядок элементов: {string.Join(", ", numbers)}");
+    }
+}
+            </CODE></PRE></SECTION><SECTION>
+<P>Пример использования метода <CODE>Sort()</CODE>:</P><PRE><CODE>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Создаем и инициализируем массив
+        int[] numbers = { 5, 3, 2, 4, 1 };
+
+        // Сортируем массив
+        Array.Sort(numbers);
+
+        // Выводим отсортированные элементы массива на экран
+        foreach (int num in numbers)
+        {
+            Console.WriteLine(num);
+        }
+    }
+}
+            </CODE></PRE></SECTION><SECTION>
+<H2>Задания</H2>
+<P>Выполните следующие задания:</P>
+<OL>
+  <LI>Создайте массив целых чисел <CODE>numbers</CODE> и заполните его 5 
+  элементами, введенными пользователем. Выведите на экран все элементы массива. 
+  <LI>Создайте массив строк <CODE>names</CODE> и заполните его 3 именами, 
+  введенными пользователем. Выведите на экран все элементы массива. 
+  <LI>Создайте массив целых чисел <CODE>numbers</CODE> и заполните его 10 
+  случайными числами. Отсортируйте массив и выведите его на экран. 
+</LI></OL></SECTION><SECTION>
+<H2>Вопросы для самопроверки</H2>
+<OL>
+  <LI>Как осуществляется ввод-вывод элементов одномерного массива в C#? 
+  <LI>Какие основные методы предоставляет класс <CODE>Array</CODE> для работы с 
+  массивами? </LI></OL></DIV>
+
+				</div>
+			</div>
+			</div>
+			</div>
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+				<li>
+					<h2></h2>
+					<ul>
+						<li><a style="" href="index.html">Главная</a></li>
+<li><a style="" href="page1.html">Элементы языка, типы данных, переменные, константы</a></li>
+<li><a style="" href="page2.html">Операции и выражения в языке C#, математические функции</a></li>
+<li><a style="" href="page3.html">Ввод-вывод, линейное программирование</a></li>
+<li><a style="" href="page4.html">Операторы присваивания, ветвления, оператор goto</a></li>
+<li><a style="" href="page5.html">Операторы цикла: for, while, do-while</a></li>
+<li><a style="" href="page6.html">Одномерные массивы</a></li>
+<li class="active"><a style="" href="page7.html">Основные элементы класса Array</a></li>
+<li><a style="" href="page8.html">Двумерные массивы</a></li>
+<li><a style="" href="page10.html">Методы в C#</a></li>
+<li><a style="" href="page11.html">Символы и строки в С#</a></li>
+<li><a style="" href="page12.html">Объектно-ориентированное программирование </a></li>
+<li><a style="" href="page21.html">Microsoft Visual Studio</a></li>
+<li><a style="" href="page27.html">Глосарий</a></li>
+<li><a style="" href="page29.html">Тест</a></li>
+<li><a style="" href="page30.html">Тест</a></li>
+
+					</ul>
+				</li>
+			
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer">
+		<p> | Электронный учебник | </a></p>
+	</div>
+	<!-- end #footer -->
+</div>
+</body>
+</html>

@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Двумерные массивы - Oнлайн курс C#</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+<meta name="generator" content="TurboSite 1.7.1" />
+
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="index.html">Oнлайн курс C#</a></h1>
+			<p></p>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li><a style="" href="index.html">Главная</a></li>
+<li><a style="" href="page13.html">Практические задания</a></li>
+<li><a style="" href="page17.html">Самостоятельная работа</a></li>
+<li><a style="" href="page19.html">Контрольные вопросы</a></li>
+<li><a style="" href="page27.html">Глосарий</a></li>
+<li><a style="" href="page29.html">Тест</a></li>
+
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+			<div class="post">
+			<div class="post-bgtop">
+			<div class="post-bgbtm">
+				<h1 class="title">Двумерные массивы</h1>
+				<div class="entry">
+					
+<META name=viewport content="width=device-width, initial-scale=1.0">
+<STYLE>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        p {
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        footer a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </STYLE>
+
+<DIV class=container>
+<H2>Введение в двумерные массивы</H2>
+<P>Двумерный массив - это массив массивов, он представляет собой таблицу из 
+элементов. В отличие от одномерных массивов, где доступ к элементам 
+осуществляется по одному индексу, в двумерных массивах для доступа к элементу 
+требуется указание двух индексов: строки и столбца.</P></SECTION><SECTION>
+<H2>Ввод-вывод элементов двумерного массива</H2>
+<P>Для ввода-вывода элементов двумерного массива в C# используются вложенные 
+циклы. Внешний цикл перебирает строки, а внутренний - столбцы.</P>
+<P>Пример вывода элементов массива:</P><PRE><CODE>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Создаем и инициализируем двумерный массив
+        int[,] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+
+        // Выводим элементы массива на экран
+        for (int i = 0; i &lt; matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j &lt; matrix.GetLength(1); j++)
+            {
+                Console.Write(matrix[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+            </CODE></PRE>
+<P>Пример ввода элементов массива:</P><PRE><CODE>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Создаем двумерный массив
+        int[,] matrix = new int[3, 3];
+
+        // Заполняем массив данными, введенными пользователем
+        for (int i = 0; i &lt; matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j &lt; matrix.GetLength(1); j++)
+            {
+                Console.Write($"Введите элемент [{i}, {j}]: ");
+                matrix[i, j] = int.Parse(Console.ReadLine());
+            }
+        }
+
+        // Выводим элементы массива на экран
+        for (int i = 0; i &lt; matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j &lt; matrix.GetLength(1); j++)
+            {
+                Console.Write(matrix[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+            </CODE></PRE></SECTION><SECTION>
+<H2>Сумма элементов главной и побочной диагонали</H2>
+<P>Для подсчета сумм элементов главной и побочной диагонали двумерного массива 
+также используются вложенные циклы. Главная диагональ проходит от верхнего 
+левого угла до нижнего правого угла, побочная - от верхнего правого угла до 
+нижнего левого.</P>
+<P>Пример:</P><PRE><CODE>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[,] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+        int rows = matrix.GetLength(0);
+        int cols = matrix.GetLength(1);
+
+        int mainDiagonalSum = 0;
+        int secondaryDiagonalSum = 0;
+
+        for (int i = 0; i &lt; rows; i++)
+        {
+            for (int j = 0; j &lt; cols; j++)
+            {
+                if (i == j)
+                {
+                    mainDiagonalSum += matrix[i, j];
+                }
+
+                if (i + j == rows - 1)
+                {
+                    secondaryDiagonalSum += matrix[i, j];
+                }
+            }
+        }
+
+        Console.WriteLine($"Сумма элементов главной диагонали: {mainDiagonalSum}");
+        Console.WriteLine($"Сумма элементов побочной диагонали: {secondaryDiagonalSum}");
+    }
+}
+            </CODE></PRE></SECTION><SECTION>
+<H2>Задания</H2>
+<P>Выполните следующие задания:</P>
+<OL>
+  <LI>Создайте двумерный массив размером 3x3 и заполните его значениями, 
+  введенными пользователем. Выведите на экран элементы массива. 
+  <LI>Найдите и выведите сумму элементов главной и побочной диагонали созданного 
+  массива. </LI></OL></SECTION><SECTION>
+<H2>Вопросы для самопроверки</H2>
+<OL>
+  <LI>Как осуществляется ввод-вывод элементов двумерного массива в C#? 
+  <LI>Как найти сумму элементов главной и побочной диагонали двумерного массива? 
+  </LI></OL></DIV>
+
+				</div>
+			</div>
+			</div>
+			</div>
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+				<li>
+					<h2></h2>
+					<ul>
+						<li><a style="" href="index.html">Главная</a></li>
+<li><a style="" href="page1.html">Элементы языка, типы данных, переменные, константы</a></li>
+<li><a style="" href="page2.html">Операции и выражения в языке C#, математические функции</a></li>
+<li><a style="" href="page3.html">Ввод-вывод, линейное программирование</a></li>
+<li><a style="" href="page4.html">Операторы присваивания, ветвления, оператор goto</a></li>
+<li><a style="" href="page5.html">Операторы цикла: for, while, do-while</a></li>
+<li><a style="" href="page6.html">Одномерные массивы</a></li>
+<li><a style="" href="page7.html">Основные элементы класса Array</a></li>
+<li class="active"><a style="" href="page8.html">Двумерные массивы</a></li>
+<li><a style="" href="page10.html">Методы в C#</a></li>
+<li><a style="" href="page11.html">Символы и строки в С#</a></li>
+<li><a style="" href="page12.html">Объектно-ориентированное программирование </a></li>
+<li><a style="" href="page21.html">Microsoft Visual Studio</a></li>
+<li><a style="" href="page27.html">Глосарий</a></li>
+<li><a style="" href="page29.html">Тест</a></li>
+<li><a style="" href="page30.html">Тест</a></li>
+
+					</ul>
+				</li>
+			
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer">
+		<p> | Электронный учебник | </a></p>
+	</div>
+	<!-- end #footer -->
+</div>
+</body>
+</html>

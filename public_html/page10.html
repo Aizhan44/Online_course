@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Методы в C# - Oнлайн курс C#</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+<meta name="generator" content="TurboSite 1.7.1" />
+
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="index.html">Oнлайн курс C#</a></h1>
+			<p></p>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li><a style="" href="index.html">Главная</a></li>
+<li><a style="" href="page13.html">Практические задания</a></li>
+<li><a style="" href="page17.html">Самостоятельная работа</a></li>
+<li><a style="" href="page19.html">Контрольные вопросы</a></li>
+<li><a style="" href="page27.html">Глосарий</a></li>
+<li><a style="" href="page29.html">Тест</a></li>
+
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+			<div class="post">
+			<div class="post-bgtop">
+			<div class="post-bgbtm">
+				<h1 class="title">Методы в C#</h1>
+				<div class="entry">
+					
+<META name=viewport content="width=device-width, initial-scale=1.0">
+<STYLE>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        p {
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        footer a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </STYLE>
+
+<DIV class=container>
+<H2>Синтаксис определения метода</H2>
+<P>Метод в C# - это блок кода, который выполняет определенную задачу. Он может 
+принимать параметры и возвращать значение.</P><PRE><CODE>
+[модификаторы] возвращаемый_тип ИмяМетода([параметры])
+{
+    // Тело метода
+}
+            </CODE></PRE>
+<P>Где:</P>
+<UL>
+  <LI><STRONG>модификаторы</STRONG> - это модификаторы доступа и другие ключевые 
+  слова (например, <CODE>public</CODE>, <CODE>private</CODE>). 
+  <LI><STRONG>возвращаемый_тип</STRONG> - это тип данных, который метод вернет 
+  после выполнения. 
+  <LI><STRONG>ИмяМетода</STRONG> - это идентификатор метода. 
+  <LI><STRONG>параметры</STRONG> (необязательно) - это значения, которые 
+  передаются методу для выполнения операций. </LI></UL>
+<P><STRONG>Пример:</STRONG></P><PRE><CODE>
+public int Add(int a, int b)
+{
+    return a + b;
+}
+            </CODE></PRE>
+<P>Этот метод <CODE>Add</CODE> принимает два целых числа <CODE>a</CODE> и 
+<CODE>b</CODE> и возвращает их сумму.</P></SECTION><SECTION>
+<H2>Параметры методов</H2>
+<P>Методы могут иметь параметры, которые представляют значения, передаваемые 
+методу для выполнения операций.</P>
+<P>Синтаксис определения метода с параметрами:</P><PRE><CODE>
+[модификаторы] возвращаемый_тип ИмяМетода(тип_параметра1 ИмяПараметра1, тип_параметра2 ИмяПараметра2, ...)
+{
+    // Тело метода
+}
+            </CODE></PRE></SECTION><SECTION>
+<H2>Способы передачи параметров</H2>
+<H3>Параметры – значения</H3>
+<P>Параметры передаются в метод по значению. В методе создается копия 
+переданного значения, и изменения, сделанные внутри метода, не влияют на 
+оригинальное значение.</P><PRE><CODE>
+public void ModifyValue(int x)
+{
+    x = x * 2;
+}
+            </CODE></PRE>
+<H3>Параметры – ссылки</H3>
+<P>Параметры передаются в метод по ссылке, что позволяет изменять оригинальное 
+значение из метода.</P><PRE><CODE>
+public void ModifyValue(ref int x)
+{
+    x = x * 2;
+}
+            </CODE></PRE>
+<H3>Выходной параметр</H3>
+<P>Метод может иметь выходной параметр, который используется для возврата 
+значения из метода.</P><PRE><CODE>
+public void GetValues(out int x, out int y)
+{
+    x = 10;
+    y = 20;
+}
+            </CODE></PRE></SECTION><SECTION>
+<H2>Примеры методов</H2>
+<P>Давайте рассмотрим несколько примеров методов:</P>
+<H3>Пример 1: Метод с одним параметром</H3><PRE><CODE>
+public void Greet(string name)
+{
+    Console.WriteLine($"Привет, {name}!");
+}
+            </CODE></PRE>
+<P>Этот метод <CODE>Greet</CODE> принимает один параметр <CODE>name</CODE>, 
+представляющий имя человека, и выводит приветствие на консоль.</P>
+<H3>Пример 2: Метод с возвращаемым значением</H3><PRE><CODE>
+public int Square(int num)
+{
+    return num * num;
+}
+            </CODE></PRE>
+<P>Этот метод <CODE>Square</CODE> принимает один параметр <CODE>num</CODE>, 
+возводит его в квадрат и возвращает результат.</P></SECTION><SECTION>
+<H2>Задания</H2>
+<P>Выполните следующие задания:</P>
+<OL>
+  <LI>Создайте метод <CODE>Add</CODE>, который принимает два целых числа и 
+  возвращает их сумму. 
+  <LI>Создайте метод <CODE>Swap</CODE>, который меняет значения двух целых 
+  переменных местами. 
+  <LI>Создайте метод <CODE>GetMax</CODE>, который принимает массив целых чисел и 
+  возвращает максимальное значение в массиве. </LI></OL></SECTION><SECTION>
+<H2>Вопросы для самопроверки</H2>
+<OL>
+  <LI>Каков синтаксис определения метода в C#? 
+  <LI>Чем отличаются параметры – значения и параметры – ссылки? 
+  <LI>Для чего используется выходной параметр? </LI></OL></DIV>
+
+				</div>
+			</div>
+			</div>
+			</div>
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+				<li>
+					<h2></h2>
+					<ul>
+						<li><a style="" href="index.html">Главная</a></li>
+<li><a style="" href="page1.html">Элементы языка, типы данных, переменные, константы</a></li>
+<li><a style="" href="page2.html">Операции и выражения в языке C#, математические функции</a></li>
+<li><a style="" href="page3.html">Ввод-вывод, линейное программирование</a></li>
+<li><a style="" href="page4.html">Операторы присваивания, ветвления, оператор goto</a></li>
+<li><a style="" href="page5.html">Операторы цикла: for, while, do-while</a></li>
+<li><a style="" href="page6.html">Одномерные массивы</a></li>
+<li><a style="" href="page7.html">Основные элементы класса Array</a></li>
+<li><a style="" href="page8.html">Двумерные массивы</a></li>
+<li class="active"><a style="" href="page10.html">Методы в C#</a></li>
+<li><a style="" href="page11.html">Символы и строки в С#</a></li>
+<li><a style="" href="page12.html">Объектно-ориентированное программирование </a></li>
+<li><a style="" href="page21.html">Microsoft Visual Studio</a></li>
+<li><a style="" href="page27.html">Глосарий</a></li>
+<li><a style="" href="page29.html">Тест</a></li>
+<li><a style="" href="page30.html">Тест</a></li>
+
+					</ul>
+				</li>
+			
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer">
+		<p> | Электронный учебник | </a></p>
+	</div>
+	<!-- end #footer -->
+</div>
+</body>
+</html>
