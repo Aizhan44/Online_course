@@ -1,0 +1,96 @@
+﻿[Test]
+Programm=SimpleTest
+Version=0.1
+TestName=Тест
+Author=
+MessageOnComplete=Тест аяқталды!
+AllowFinish=1
+ShowResult=1
+DisableOpenTest=1
+ExitOnComplete=1
+LastQ=19
+
+[Q0]
+QLabel=C#операторлары дегеніміз не?
+LastA=3
+A0=операторлар-айнымалыларды жариялау үшін қолданылатын кілт сөздер.
+A1=
+A2=* операторлар-бұл деректер бойынша операцияларды орындау үшін қолданылатын таңбалар немесе кілт сөздер.
+A3= операторлар-белгілі бір тапсырмаларды орындау үшін шақырылған C# ішіндегі арнайы функциялар.
+
+[Q1]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q2]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q3]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q4]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q5]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q6]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q7]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q8]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q9]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q10]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q11]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q12]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q13]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q14]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q15]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q16]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q17]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q18]
+QLabel=Еще один вопрос
+LastA=-1
+
+[Q19]
+QLabel=C#операторлары дегеніміз не?
+LastA=-1
+
